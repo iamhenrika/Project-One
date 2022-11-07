@@ -42,11 +42,19 @@ function activateTile(color) {
 
 function playRound(nextSequence) {
     nextSequence.forEach((color, index) => {
-      setTimeout(() => {
-        activateTile(color);
-      }, (index + 1) * 600);
-      // the number of milliseconds changes on each iteration 
-      // the tile is called with the appropriate color and sound 
-      // iterates over the seq array and it calls the activateTile at intervals so they don't all appear at once
+        setTimeout(() => {
+            activateTile(color);
+        }, (index + 1) * 600);
+        // the number of milliseconds changes on each iteration 
+        // the tile is called with the appropriate color and sound 
+        // iterates over the seq array and it calls the activateTile at intervals so they don't all appear at once
     });
-  }
+}
+
+function nextStep() {
+    const tiles = ['red', 'green', 'blue', 'yellow'];
+    const random = tiles[Math.floor(Math.random() * tiles.length)];
+
+    return random;
+    // rounded random number to between 0 and 3, the number of tiles in the array
+}
