@@ -113,3 +113,11 @@ function handleClick(tile) {
         }`;
     // player can begin the round and it shows how many items they need to get right
 }
+
+function startGame() {
+    startButton.classList.add('hidden');
+    info.classList.remove('hidden');
+    info.textContent = 'Wait for it...';
+    nextRound();
+    // allows the info to display once the start button is clicked, hides the start button and brings forward the wait message
+}
