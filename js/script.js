@@ -39,3 +39,14 @@ function activateTile(color) {
     // tile is activated and sound played
     // activated is removed after 300ms
 }
+
+function playRound(nextSequence) {
+    nextSequence.forEach((color, index) => {
+      setTimeout(() => {
+        activateTile(color);
+      }, (index + 1) * 600);
+      // the number of milliseconds changes on each iteration 
+      // the tile is called with the appropriate color and sound 
+      // iterates over the seq array and it calls the activateTile at intervals so they don't all appear at once
+    });
+  }
