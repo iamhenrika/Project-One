@@ -25,3 +25,17 @@ function humanTurn(level) {
     // allows the btns to be clicked after the seq is completed by the computer
     // prompts the player to go and lets them know what level this is
 }
+
+function activateTile(color) {
+    const tile = document.querySelector(`[data-tile='${color}']`);
+    const sound = document.querySelector(`[data-sound='${color}']`);
+
+    tile.classList.add('activated');
+    sound.play();
+
+    setTimeout(() => {
+        tile.classList.remove('activated');
+    }, 300);
+    // tile is activated and sound played
+    // activated is removed after 300ms
+}
