@@ -78,3 +78,38 @@ function nextRound() {
     }, level * 600 + 1000);
     // executes the player's turn after the computer goes and the total length of time is the level times 600
 }
+
+function handleClick(tile) {
+    const index = humanSequence.push(tile) - 1;
+    const sound = document.querySelector(`[data-sound='${tile}']`);
+    sound.play();
+    // pushes tile value to human sequence and stores it as index and the btn sound is played
+
+    const remainingTaps = sequence.length - humanSequence.length;
+
+    if (humanSequence[index] !== sequence[index]) {
+        resetGame('Ohhhhh, GAME OVER love. Do try again soon. Bye Bye Now!');
+        return;
+        //if the human tile value does not match computer value, game resets
+    }
+
+    if (humanSequence.length === sequence.length) {
+        if (humanSequence.length === 30) {
+            resetGame('I guess you have something to be proud of... CONGRATULATIONS, by the way.');
+            return
+            // complete 30 rounds and you win the game
+        }
+
+        humanSequence = [];
+        info.textContent = 'Not bad. Try this...';
+        setTimeout(() => {
+            nextRound();
+        }, 1000);
+        return;
+    }
+    // is the player's sequence matches the computer then they are sent to the next round
+
+    info.textContent = `Your turn: ${remainingTaps} Tap${remainingTaps > 1 ? 's' : ''
+        }`;
+    // player can begin the round and it shows how many items they need to get right
+}
