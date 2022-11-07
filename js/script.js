@@ -58,3 +58,23 @@ function nextStep() {
     return random;
     // rounded random number to between 0 and 3, the number of tiles in the array
 }
+
+function nextRound() {
+    level += 1;
+
+    tileContainer.classList.add('unclickable');
+    info.textContent = 'The computer is thinking...';
+    heading.textContent = `Level ${level} of 30`;
+    // adding unclickable and updating the level and info
+
+    // copy all elements in the 'seq' array to 'nextSeq
+    const nextSequence = [...sequence];
+    nextSequence.push(nextStep());
+    playRound(nextSequence);
+
+    sequence = [...nextSequence];
+    setTimeout(() => {
+        humanTurn(level);
+    }, level * 600 + 1000);
+    // executes the player's turn after the computer goes and the total length of time is the level times 600
+}
