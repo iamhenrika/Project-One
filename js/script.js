@@ -18,3 +18,10 @@ function resetGame(text) {
     info.classList.add('hidden');
     tileContainer.classList.add('unclickable');
 }
+
+function humanTurn(level) {
+    tileContainer.classList.remove('unclickable');
+    info.textContent = `You give it a go: ${level} Tap${level > 1 ? 's' : ''}`;
+    // allows the btns to be clicked after the seq is completed by the computer
+    // prompts the player to go and lets them know what level this is
+}
