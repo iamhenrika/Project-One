@@ -121,3 +121,11 @@ function startGame() {
     nextRound();
     // allows the info to display once the start button is clicked, hides the start button and brings forward the wait message
 }
+
+startButton.addEventListener('click', startGame);
+tileContainer.addEventListener('click', event => {
+    const { tile } = event.target.dataset;
+
+    if (tile) handleClick(tile);
+    // data-tile value is accessed and stored in the tile variable (only elements without data-tile attribute), if the value is not an empty string, handleClick function is executed with the tile value as its only argument
+});
