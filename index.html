@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Simon Game</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main class="game">
@@ -23,6 +23,9 @@
       <footer class="info-section">
         <button class="start-button js-start">Start</button>
         <span class="info js-info hidden"></span>
+        <div class="hidden" id="timer">
+          <p>You're being timed!</p>
+        </div>
       </footer>
     </main>
 
@@ -44,6 +47,6 @@
         data-sound="yellow"
       ></audio>
     </div>
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
