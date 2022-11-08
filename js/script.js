@@ -18,19 +18,9 @@ function resetGame(text) {
   heading.textContent = 'SIMON';
   info.classList.add('hidden');
   tileContainer.classList.add('unclickable');
+  location.reload();
   timerText.classList.toggle('hidden')
 
-  let sec = 90;
-  let time = setInterval(myTimer, 1000);
-
-  function myTimer() {
-    document.getElementById('timer').innerHTML = sec + "  seconds left";
-    sec--;
-    if (sec == -1) {
-      clearInterval(time);
-      resetGame("You timed out!! So sad.");
-    }
-  };
 }
 
 function humanTurn(level) {
