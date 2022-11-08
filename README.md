@@ -9,5 +9,6 @@ For my very first try at creating a web-based game using DOM manipulation, I’m
 
 The game will feature HTML, CSS, and JavaScript components.
 
-I will also endeavor to adjust the format to allow for a two-player functionality. 
+I will also integrate a timer function.
 
+*Extra extra: I will try to to make this a multi-player turn-based game.
